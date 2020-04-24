@@ -43,7 +43,7 @@ def wait_until_fee_less(current_fee: int) -> int:
             sleep(60)
             current_fee = eth_price_gasstation()
             print(f'Current gas price {current_fee / 1e9} wei')
-        return current_fee
+    return current_fee
 
 
 def list_split(keypairs_list: list, list_size: int = 1000):
@@ -103,9 +103,8 @@ def eth_price_gasstation():
             return safe_low_price
 
     except Exception as gas_price_err:
-        print("Can't get current gas price --> exit")
-        print(gas_price_err)
-        exit()
+        print("Can't get current gas price --> getting web3 default value")
+        return w3.eth.gasPrice
 
 
 def write_log(string_to_write: str):
@@ -171,7 +170,6 @@ print(f'Found {len(non_empty_lst)} non empty addresses')
 # Auto detect safelow fee if it NOT manually setup
 if eth_gas_price == 0:
     eth_gas_price = eth_price_gasstation()
-# gas_price_per_ETH_transaction = w3.eth.gasPrice
 print(f'Current transaction price in wei: {Web3.fromWei(eth_gas_price, "gwei")}')
 
 # Waiting for low commission to send if it "on" in config
