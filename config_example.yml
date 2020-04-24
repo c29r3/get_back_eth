@@ -1,0 +1,33 @@
+# Examples:
+# "https://mainnet.infura.io/v3/c312b5b963834bbd8fc576006541f7f2"
+# "http://127.0.0.1:8545"
+eth_provider_url: "http://127.0.0.1:8545"
+
+# csv file name without extension
+# file content format example:
+# eth_address;eth_privatekey\n
+file_name: "test"
+csv_delimiter: ";"
+
+# ETH address who obtain the remains of the ether
+recipient_address: "YOUR_ADDRESS"
+eth_gas_limit: 21000
+
+# Specify the value in the format GWEI (1 gwei == 1000000000 wei)
+# If not specified, then the script will try to determine the minimum commission (safe low) on the network
+# using API https://ethgasstation.info/"""
+manual_gas_price: 0
+
+# Enable\disable waiting for low commission to send
+# "on" or "off"
+wait_for_gasprice: "on"
+# Do not start sending ETH until the fee is less than 'value'
+wait_for_gasprice_value: 2
+
+
+# Time between transaction transfers in seconds
+sleep_before_tx: 0
+
+# The number of threads that will be used for multi-threaded checking of address balances
+threads_count: 10
+
