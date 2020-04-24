@@ -4,7 +4,7 @@ Collecting eth coins from many addresses to one
 ## Installing
 ```
 git clone https://github.com/c29r3/get_back_eth.git && \ 
-cd get_back_eth && cp config_example.yml > config.yml && \
+cd get_back_eth && cp config_example.yml config.yml && \
 pip3 install -r requirements.txt
 ```
 
