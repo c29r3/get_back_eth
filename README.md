@@ -1,5 +1,5 @@
 # get_back_eth
-Collecting eth coins from many addresses to one
+Collecting eth coins from many addresses to one  
 Inspired https://github.com/wbobeirne/eth-balance-checker
 
 ## Features
